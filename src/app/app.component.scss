@@ -1,0 +1,54 @@
+@import "base";
+
+header {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem;
+
+  span {
+    opacity: .7;
+  }
+}
+
+#presentation {
+  position: absolute;
+  top: 10rem;
+  left: calc(50% - 338px);
+  animation: heartbeat 4s ease infinite;
+
+  h1 {
+    font-size: 10rem;
+    filter: drop-shadow(0 0 .25rem $black25);
+    letter-spacing: .5rem;
+    background: -webkit-linear-gradient(90deg, $less-light 0%, $white 30%, $white 70%, $less-light 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    span {
+      font-size: 6rem;
+      opacity: .9;
+      background: -webkit-linear-gradient(90deg, $less-light 0%, $white 30%, $white 70%, $less-light 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: $regular;
+    opacity: .5;
+    margin-bottom: -1rem
+  }
+}
+
+#collection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  margin: 0 10%;
+  top: 45%;
+  position: absolute;
+}
+
+

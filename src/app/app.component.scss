@@ -49,6 +49,15 @@ header {
   margin: 0 10%;
   top: 45%;
   position: absolute;
+
+  #with-signals, #without-signals {
+    cursor: pointer;
+    opacity: .5;
+
+    &.active {
+      opacity: 1;
+    }
+  }
 }
 
 

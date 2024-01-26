@@ -33,7 +33,7 @@
   left:0;
   right: 0;
   bottom: 0;
-  animation: heartbeat 4s ease infinite;
+  animation: heartbeat 6s ease-in-out infinite;
 
 }
 .svgdraw {
@@ -50,7 +50,7 @@
   stroke-width: 4;
   stroke-dasharray: 1000px;
   stroke-dashoffset: 1000px;
-  animation: draw 4s infinite forwards normal linear;
+  animation: draw 6s ease-in-out infinite;
   position: relative;
   opacity: .52;
 }

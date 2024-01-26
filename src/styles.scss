@@ -5,7 +5,11 @@
 body {
   background: linear-gradient(-10deg, $extra-blue, $dark-blue, $light-blue, $lesser-blue);
   background-size: 200% 200%;
-  animation: gradient 4s ease infinite;
+  animation: gradient 6s ease infinite;
   height: 100vh;
+
+  @media ($small-screen) {
+    background-size: 120% 120%;
+  }
 }
 

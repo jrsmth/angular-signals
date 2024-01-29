@@ -1,0 +1,44 @@
+@import "base";
+
+#collection {
+  display: flex;
+  justify-content: center;
+
+  form {
+    width: 29rem;
+
+    div {
+      display: flex;
+      margin: 2rem;
+    }
+
+    input, select {
+      width: 80%;
+      background: none;
+      border: none;
+      font-size: 1rem;
+    }
+
+    label {
+      width: 100%;
+      display: block;
+    }
+
+    button {
+      left: calc(50% - 5rem);
+      background: #ffffff0a;
+      padding: .75rem 1rem;
+      border-radius: .5rem;
+      width: 10rem;
+      box-shadow: 0 .25rem 1rem -.25rem #ffffff0f;
+      transition: .1s;
+      text-transform: uppercase;
+      letter-spacing: .5rem;
+      font-weight: $semi-bold;
+
+      &:hover {
+        background: #ffffff0f;
+      }
+    }
+  }
+}

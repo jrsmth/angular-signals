@@ -1,0 +1,37 @@
+<section id="collection">
+  <form [formGroup]="form">
+    <div id="unit-collection">
+      <label>Unit</label>
+      <input type="radio" id="metric" value="metric" formControlName="unit">
+      <label for="metric">Metric</label>
+      <input type="radio" id="imperial" value="imperial" formControlName="unit">
+      <label for="imperial">Imperial</label>
+    </div>
+    <div id="gender-collection">
+      <label>Gender</label>
+      <input type="radio" id="female" formControlName="gender" value="female">
+      <label for="female">Female</label>
+      <input type="radio" id="male" formControlName="gender" value="male">
+      <label for="male">Male</label>
+    </div>
+    <div id="physique-collection">
+      <label for="weight">Weight</label>
+      <input id="weight" formControlName="weight" type="number" placeholder="{{ unitHeight }}">
+      <label for="height">Height</label>
+      <input id="height" formControlName="height" type="number" placeholder="{{ unitWeight }}">
+      <label for="age">Age</label>
+      <input id="age" formControlName="age" type="number" placeholder="years">
+    </div>
+    <div id="activity-collection">
+      <label for="activity">Activity Level</label>
+      <select formControlName="activity" id="activity">
+        <option value="sedentary">Sedentary (little or no exercise)</option>
+        <option value="light">Light Exercise (1-2 times/week)</option>
+        <option value="moderate">Moderate Exercise (3-5 times/week)</option>
+        <option value="heavy">Heavy Exercise (6-7 times/week)</option>
+        <option value="intense">Physical Job (intense daily activity)</option>
+      </select>
+    </div>
+    <button mat-button color="primary" (click)="submit()">Calculate</button>
+  </form>
+</section>

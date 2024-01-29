@@ -2,6 +2,10 @@
 
 @import "base";
 
+html {
+  overflow: hidden;
+}
+
 body {
   background: linear-gradient(-10deg, $extra-blue, $dark-blue, $light-blue, $lesser-blue);
   background-size: 200% 200%;
@@ -11,4 +15,9 @@ body {
   @media ($small-screen) {
     background-size: 120% 120%;
   }
+}
+
+// Temp...
+.highlight {
+  background: greenyellow !important;
 }

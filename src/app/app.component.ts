@@ -11,13 +11,14 @@ import {OriginalComponent} from "./original/original.component";
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, ReactiveFormsModule, MatButton, HighlightDirective, SignalComponent, OriginalComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'angular-signals';
   tdee: number = 2200;
-  signalled: boolean = false;
+  signalled: boolean = true; // false
 
   activateForm(formName: string): void {
     this.signalled = (formName == 'with');

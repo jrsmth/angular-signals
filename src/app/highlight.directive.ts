@@ -10,23 +10,25 @@ export class HighlightDirective implements DoCheck {
   defaultColor = '#a3cc95';
   className = 'highlight';
   el = inject(ElementRef);
+  enabled: boolean = false;
 
   ngDoCheck() {
     this.addHighlight();
-    setTimeout(() => this.removeHighlight(), 500);
+    // setTimeout(() => this.removeHighlight(), 500);
   }
 
   private addHighlight() {
-    (this.el.nativeElement as HTMLElement).classList.add(this.className);
-    // confetti({
-    //   particleCount: 100,
-    //   spread: 200,
-    //   origin: { y: 0.6 },
-    // });
-    // console.log(this.el.nativeElement as HTMLElement);
+    // (this.el.nativeElement as HTMLElement).classList.add(this.className);
+    confetti({
+      particleCount: 200 * Math.random(),
+      spread: 500 * Math.random(),
+      origin: { x: Math.random(), y: Math.random() },
+    });
+
+    console.log(this.el.nativeElement as HTMLElement);
   }
 
   private removeHighlight() {
-    (this.el.nativeElement as HTMLElement).classList.remove(this.className);
+    // (this.el.nativeElement as HTMLElement).classList.remove(this.className);
   }
 }

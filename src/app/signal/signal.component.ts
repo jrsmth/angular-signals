@@ -9,12 +9,23 @@ import { AppFormComponent } from "../app-form/app-form.component";
   selector: 'signal',
   standalone: true,
   imports: [CommonModule, HighlightDirective, AppFormComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './signal.component.html',
   styleUrl: './signal.component.scss'
 })
 export class SignalComponent {
 
   @Input() form: FormGroup = new FormGroup({});
+
+  // mysignal = signal(1);
+  //
+  // constructor() {
+  //   setTimeout(() => setInterval(() => this.changeSignalValue(), 2000), 1000);
+  // }
+  //
+  // changeSignalValue() {
+  //   this.mysignal.update((value) => value + 1);
+  // }
 
   tdeeSignal: WritableSignal<number> = signal(2400);
 
@@ -30,7 +41,8 @@ export class SignalComponent {
       inputs.activity.value
     );
 
-    this.tdeeSignal.set(tdee); // in blog, explain .set() vs .update()
+    // this.tdeeSignal.set(tdee); // in blog, explain .set() vs .update()
+    this.tdeeSignal.update(() => tdee); // bc OnPush...?
   }
 
 }

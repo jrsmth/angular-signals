@@ -8,6 +8,7 @@ import {CalorieService} from "../calorie.service";
   selector: 'app-form',
   standalone: true,
   imports: [CommonModule, MatButton, ReactiveFormsModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app-form.component.html',
   styleUrl: './app-form.component.scss'
 })

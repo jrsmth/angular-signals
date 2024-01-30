@@ -1,14 +1,15 @@
-import {ChangeDetectionStrategy, Component, Input, signal, WritableSignal} from "@angular/core";
-import { HighlightDirective } from "../highlight.directive";
-import { CommonModule } from "@angular/common";
-import { FormGroup } from "@angular/forms";
-import { AppFormComponent } from "../app-form/app-form.component";
+import {ChangeDetectionStrategy, Component, Input, signal} from "@angular/core";
+import {HighlightDirective} from "../highlight.directive";
+import {CommonModule} from "@angular/common";
+import {FormGroup} from "@angular/forms";
+import {AppFormComponent} from "../app-form/app-form.component";
 import {CalorieService} from "../calorie.service";
 
 @Component({
   selector: 'original',
   standalone: true,
   imports: [CommonModule, HighlightDirective, AppFormComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './original.component.html',
   styleUrl: './original.component.scss'
 })
@@ -30,6 +31,5 @@ export class OriginalComponent {
       inputs.activity.value
     );
   }
-
 
 }

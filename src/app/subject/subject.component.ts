@@ -1,7 +1,8 @@
-import {ChangeDetectionStrategy, Component} from "@angular/core";
+import {ChangeDetectionStrategy, Component, signal} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {RouterOutlet} from "@angular/router";
 import {HighlightDirective} from "../core/directive/highlight.directive";
+import {JokeService} from "../core/service/joke.service";
 
 @Component({
   selector: 'subject',
@@ -13,9 +14,17 @@ import {HighlightDirective} from "../core/directive/highlight.directive";
 })
 export class SubjectComponent {
   title = 'angular-signals';
-  renderCount = 0;
+  renderCount: number = 0;
+  jokeQuestion: string = "";
+  jokeAnswer: string = "";
+
+  constructor(private jokeService: JokeService) {}
 
   handleClick(): void {
     this.renderCount++;
+
+    const joke = this.jokeService.getRandom();
+    this.jokeQuestion = joke.question;
+    this.jokeAnswer = joke.answer;
   }
 }

@@ -1,4 +1,7 @@
-<section id="subject" highlight>
-  <p>To understand what recursion is, you must first understand recursion.</p>
+<section id="subject">
+  <div class="joke" highlight>
+    <p>{{ jokeQuestion }} {{ renderCount }}</p>
+    <p>{{ jokeAnswer }}</p>
+  </div>
   <button #nextSubject (click)="handleClick()">Next</button>
 </section>

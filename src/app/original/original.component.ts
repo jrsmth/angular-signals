@@ -5,12 +5,12 @@ import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {AppFormComponent} from "../app-form/app-form.component";
 import {CalorieService} from "../calorie.service";
 import {MatButton} from "@angular/material/button";
-import {RxUnpatch} from "@rx-angular/template/unpatch";
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'original',
   standalone: true,
-  imports: [CommonModule, HighlightDirective, AppFormComponent, MatButton, ReactiveFormsModule, RxUnpatch],
+  imports: [CommonModule, HighlightDirective, AppFormComponent, MatButton, ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './original.component.html',
   styleUrl: './original.component.scss'
@@ -18,6 +18,7 @@ import {RxUnpatch} from "@rx-angular/template/unpatch";
 export class OriginalComponent implements OnInit {
 
   tdee: number = 2600;
+  subject = new BehaviorSubject<number>(1);
 
   changeDetector = inject(ChangeDetectorRef);
 
@@ -54,6 +55,11 @@ export class OriginalComponent implements OnInit {
     );
     console.log(this.tdee);
     this.changeDetector.detectChanges();
+  }
+
+  changeSubjectValue() {
+    console.log(`change subject value`);
+    this.subject.next(this.subject.value + 1);
   }
 
 }

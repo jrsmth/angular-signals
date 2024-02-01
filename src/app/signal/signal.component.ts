@@ -1,10 +1,12 @@
 import {
+  AfterViewInit,
+  ApplicationRef,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
-  Component, inject,
-  Input,
-  OnInit,
-  signal,
+  Component, ElementRef, inject, Injector,
+  Input, NgZone,
+  OnInit, runInInjectionContext,
+  signal, ViewChild,
   WritableSignal
 } from "@angular/core";
 import { HighlightDirective } from "../highlight.directive";
@@ -13,17 +15,18 @@ import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import { CalorieService } from "../calorie.service";
 import { AppFormComponent } from "../app-form/app-form.component";
 import {MatButton} from "@angular/material/button";
-import {RxUnpatch} from "@rx-angular/template/unpatch";
+import {fromEvent, interval, throttle} from "rxjs";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 
 @Component({
   selector: 'signal',
   standalone: true,
-  imports: [CommonModule, HighlightDirective, AppFormComponent, MatButton, ReactiveFormsModule, RxUnpatch],
+  imports: [CommonModule, HighlightDirective, AppFormComponent, MatButton, ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './signal.component.html',
   styleUrl: './signal.component.scss'
 })
-export class SignalComponent implements OnInit {
+export class SignalComponent implements OnInit, AfterViewInit {
 
   // mysignal = signal(1);
   //
@@ -34,11 +37,33 @@ export class SignalComponent implements OnInit {
   // changeSignalValue() {
   //   this.mysignal.update((value) => value + 1);
   // }
+
   changeDetector = inject(ChangeDetectorRef);
 
   tdeeSignal: WritableSignal<number> = signal(2400);
 
+  @ViewChild('calculate') btn!: ElementRef<HTMLButtonElement>;
+  ngZone = inject(NgZone);
+  injector = inject(Injector);
+  app = inject(ApplicationRef);
+
   constructor(private service: CalorieService) {}
+
+  ngAfterViewInit(): void {
+    runInInjectionContext(this.injector, () => {
+      this.ngZone.runOutsideAngular(() => {
+        fromEvent(this.btn.nativeElement, 'click')
+          .pipe(throttle(() => interval(1000)), takeUntilDestroyed())
+          .subscribe(() => {
+
+            this.updateTdee();
+
+            // trigger the CD
+            this.app.tick();
+          });
+      });
+    });
+  }
 
   protected unitHeight = 'cm';
   protected unitWeight = 'kg';

@@ -1,13 +1,13 @@
-<header highlight>
+<header>
   <span>Total Daily Energy Expenditure Calculator</span>
 </header>
-<main>
+<main highlight>
   <div id="container">
-    <section id="selection">
-      <div id="without-signals" [class.active]="!signalled" (click)="activateForm('without')">
+    <section id="selection" #selection>
+      <div #withoutSignal id="without-signals" [class.active]="!signalled" (click)="activateForm('without')">
         <h2>Without Signals</h2>
       </div>
-      <div id="with-signals" [class.active]="signalled" (click)="activateForm('with')">
+      <div #withSignal id="with-signals" [class.active]="signalled" (click)="activateForm('with')">
         <h2>With Signals 🔊</h2>
       </div>
     </section>

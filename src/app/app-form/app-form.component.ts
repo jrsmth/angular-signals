@@ -3,12 +3,11 @@ import { CommonModule } from "@angular/common";
 import { MatButton } from "@angular/material/button";
 import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
 import {CalorieService} from "../calorie.service";
-import {RxUnpatch} from "@rx-angular/template/unpatch";
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [CommonModule, MatButton, ReactiveFormsModule, RxUnpatch],
+  imports: [CommonModule, MatButton, ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app-form.component.html',
   styleUrl: './app-form.component.scss'

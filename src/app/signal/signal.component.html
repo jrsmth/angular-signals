@@ -1,46 +1,46 @@
-<section id="presentation">
+<section id="presentation" highlight>
   <div id="breathe">
     <svg id="heart-rate" class="svgdraw" width="100%" height="100%" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" >
       <path class="path" d="M 0 200 l 40 0 l 5 -40 l 5 40 l 10 0 l 5 15 l 10 -140 l 10 220 l 5 -95 l 10 0 l 5 20 l 5 -20 l 30 0" fill="transparent"/>
     </svg>
     <h2>Your TDEE</h2>
-    <h1 highlight>{{ tdeeSignal() }}<span> kcal</span></h1>
+    <h1>{{ tdeeSignal() }}<span> kcal</span></h1>
   </div>
 </section>
-<section id="collection" [unpatch]>
-  <form [formGroup]="form" [unpatch]>
+<section id="collection" >
+  <form [formGroup]="form" >
     <div id="unit-collection">
       <label>Unit</label>
-      <input [unpatch] type="radio" id="metric" value="metric" formControlName="unit">
+      <input type="radio" id="metric" value="metric" formControlName="unit">
       <label for="metric">Metric</label>
-      <input [unpatch] type="radio" id="imperial" value="imperial" formControlName="unit">
+      <input type="radio" id="imperial" value="imperial" formControlName="unit">
       <label for="imperial">Imperial</label>
     </div>
     <div id="gender-collection">
       <label>Gender</label>
-      <input [unpatch] type="radio" id="female" formControlName="gender" value="female">
+      <input type="radio" id="female" formControlName="gender" value="female">
       <label for="female">Female</label>
-      <input [unpatch] type="radio" id="male" formControlName="gender" value="male">
+      <input type="radio" id="male" formControlName="gender" value="male">
       <label for="male">Male</label>
     </div>
     <div id="physique-collection">
       <label for="height">Height</label>
-      <input [unpatch] id="height" formControlName="height" type="number" placeholder="{{ unitHeight }}">
+      <input id="height" formControlName="height" type="number" placeholder="{{ unitHeight }}">
       <label for="weight">Weight</label>
-      <input [unpatch] id="weight" formControlName="weight" type="number" placeholder="{{ unitWeight }}">
+      <input id="weight" formControlName="weight" type="number" placeholder="{{ unitWeight }}">
       <label for="age">Age</label>
-      <input [unpatch] id="age" formControlName="age" type="number" placeholder="years">
+      <input id="age" formControlName="age" type="number" placeholder="years">
     </div>
     <div id="activity-collection">
       <label for="activity">Activity Level</label>
-      <select [unpatch] formControlName="activity" id="activity">
-        <option [unpatch] value="sedentary">Sedentary (little or no exercise)</option>
-        <option [unpatch] value="light">Light Exercise (1-2 times/week)</option>
-        <option [unpatch] value="moderate">Moderate Exercise (3-5 times/week)</option>
-        <option [unpatch] value="heavy">Heavy Exercise (6-7 times/week)</option>
-        <option [unpatch] value="intense">Physical Job (intense daily activity)</option>
+      <select formControlName="activity" id="activity">
+        <option value="sedentary">Sedentary (little or no exercise)</option>
+        <option value="light">Light Exercise (1-2 times/week)</option>
+        <option value="moderate">Moderate Exercise (3-5 times/week)</option>
+        <option value="heavy">Heavy Exercise (6-7 times/week)</option>
+        <option value="intense">Physical Job (intense daily activity)</option>
       </select>
     </div>
-    <button [unpatch] mat-button color="primary" (click)="updateTdee()">Calculate</button>
+    <button mat-button color="primary" #calculate>Calculate</button>
   </form>
 </section>

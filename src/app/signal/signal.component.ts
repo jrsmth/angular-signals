@@ -11,9 +11,10 @@ import {
 } from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {RouterOutlet} from "@angular/router";
-import {HighlightDirective} from "../core/highlight.directive";
+import {HighlightDirective} from "../core/directive/highlight.directive";
 import {fromEvent, interval, throttle} from "rxjs";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import {JokeService} from "../core/service/joke.service";
 
 @Component({
   selector: 'signal',
@@ -32,6 +33,10 @@ export class SignalComponent implements AfterViewInit {
   app = inject(ApplicationRef);
 
   renderCount = signal(0);
+  jokeQuestion = signal("");
+  jokeAnswer = signal("");
+
+  constructor(private jokeService: JokeService) {}
 
   ngAfterViewInit(): void {
     runInInjectionContext(this.injector, () => {
@@ -40,6 +45,10 @@ export class SignalComponent implements AfterViewInit {
           .pipe(throttle(() => interval(1000)), takeUntilDestroyed())
           .subscribe(() => {
             this.renderCount.update((value) => value + 1);
+
+            const joke = this.jokeService.getRandom();
+            this.jokeQuestion.update(() => joke.question);
+            this.jokeAnswer.update(() => joke.answer);
 
             // trigger the CD
             this.app.tick();

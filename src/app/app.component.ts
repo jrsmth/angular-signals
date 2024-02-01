@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 import {SignalComponent} from "./signal/signal.component";
 import {SubjectComponent} from "./subject/subject.component";
-import {HighlightDirective} from "./core/highlight.directive";
+import {HighlightDirective} from "./core/directive/highlight.directive";
 
 @Component({
   selector: 'app-root',

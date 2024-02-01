@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {RouterOutlet} from "@angular/router";
-import {HighlightDirective} from "../core/highlight.directive";
+import {HighlightDirective} from "../core/directive/highlight.directive";
 
 @Component({
   selector: 'subject',

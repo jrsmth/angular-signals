@@ -13,7 +13,6 @@ export class JokeService {
 
   constructor() {
     this.total = jokes.length;
-    console.log(jokes);
   }
 
   getRandom(): Joke {

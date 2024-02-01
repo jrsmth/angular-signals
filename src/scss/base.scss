@@ -1,9 +1,9 @@
-@import 'animation';
+//@import 'animation';
 @import 'colour';
 @import 'font';
 @import 'spacing';
 
-$drop-shadow: 0 .5rem 2rem -.5rem #000000bf;
+$drop-shadow: 0 .5rem 2rem -.5rem #000000BF;
 $small-screen: 1500px;
 $ease-in: .15s ease-in-out;
 $default-text: 12px;
@@ -12,22 +12,11 @@ $default-text: 12px;
   margin: 0;
   font-family: Montserrat, serif;
   letter-spacing: 1px;
-  color: $white;
+  color: $gem;
 }
 
 html {
-  overflow: hidden;
-}
-
-body {
-  background: linear-gradient(-10deg, $persian, $tory, $chill, $turquoise);
-  background-size: 200% 200%;
-  animation: gradient 20s ease infinite;
-  height: 100vh;
-
-  @media ($small-screen) {
-    background-size: 120% 120%;
-  }
+  background: $starship;
 }
 
 .highlight {
@@ -36,6 +25,9 @@ body {
 
 .joke {
   display: none;
+  position: absolute;
+  top: 4rem;
+  left: 0;
 
   &.active {
     display: block;

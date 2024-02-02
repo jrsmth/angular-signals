@@ -1,4 +1,4 @@
-//@import 'animation';
+@import 'animation';
 @import 'colour';
 @import 'font';
 @import 'spacing';
@@ -20,9 +20,9 @@ html {
 }
 
 body {
-  background: linear-gradient(-10deg, $persian, $tory, $chill, $turquoise);
+  background: linear-gradient(-10deg, $persian 0%, $tory 25%, $chill 50%, $turquoise 75%);
   background-size: 200% 200%;
-  animation: gradient 6s ease infinite;
+  animation: gradient 20s ease infinite;
   height: 100vh;
 
   @media ($small-screen) {

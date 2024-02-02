@@ -14,7 +14,6 @@
   </a>
 </p>
 
-<h1 align="center">A <img src="./src/assets/t2-logo.svg" width="60" alt="Tier 2 Logo"> Blog</h1>
 <p align="center">Angular Signals 🔊</p>
 
 ## Overview

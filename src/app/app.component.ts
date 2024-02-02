@@ -18,4 +18,9 @@ import {faGithub} from "@fortawesome/free-brands-svg-icons";
 export class AppComponent {
   title = 'angular-signals';
   protected readonly faGithub = faGithub;
+  private _renderCount = 0;
+
+  get renderCount() {
+    return ++this._renderCount;
+  }
 }

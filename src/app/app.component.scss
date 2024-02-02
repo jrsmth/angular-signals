@@ -1,27 +1,19 @@
 @import "base";
 
 header {
-  margin: 3rem;
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem;
 
-  h1 {
-    letter-spacing: 1px;
-    font-weight: $bold;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  #links {
-    fa-icon {
-      font-size: 2rem;
-      cursor: pointer;
-    }
+  span {
+    opacity: .7;
   }
 }
 
 #parent {
   position: absolute;
   top: 12rem;
-  left: 3rem;
+  left: calc(50% - 25rem);
   height: 16rem;
   width: 50rem;
 }

@@ -1,7 +1,14 @@
-<section id="subject">
-  <div class="joke" highlight>
-    <p>{{ jokeQuestion }} {{ renderCount }}</p>
+<section id="subject" highlight>
+  <h1>Subject</h1>
+  <h2>Render Count: {{ renderCount }}</h2>
+  <div class="joke">
+    <p>{{ jokeQuestion }}</p>
     <p>{{ jokeAnswer }}</p>
   </div>
-  <button #nextSubject id="next-subject" (click)="handleClick()">Next</button>
 </section>
+<button #nextSubject id="next-subject" (click)="handleClick()">
+  Next <fa-icon [icon]="faCaretRight"></fa-icon>
+  <br>
+  <br>
+  <span>Without Signals</span>
+</button>

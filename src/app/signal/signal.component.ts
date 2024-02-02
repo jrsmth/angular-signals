@@ -15,11 +15,13 @@ import {HighlightDirective} from "../core/directive/highlight.directive";
 import {fromEvent, interval, throttle} from "rxjs";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {JokeService} from "../core/service/joke.service";
+import {FaIconComponent} from "@fortawesome/angular-fontawesome";
+import {faCaretRight} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'signal',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HighlightDirective],
+  imports: [CommonModule, RouterOutlet, HighlightDirective, FaIconComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './signal.component.html',
   styleUrl: './signal.component.scss'
@@ -60,4 +62,6 @@ export class SignalComponent implements AfterViewInit {
   handleClick(): void {
     // this.renderCount++;
   }
+
+  protected readonly faCaretRight = faCaretRight;
 }

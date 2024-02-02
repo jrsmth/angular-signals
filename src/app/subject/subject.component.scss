@@ -1,5 +1,31 @@
+@import "base";
+
 #next-subject {
   position: absolute;
-  left: 3rem;
+  left: calc(50% - 0.5 * $button-gap - $button-width);
   top: 20rem;
+}
+
+h1 {
+  font-size: 4rem;
+  filter: drop-shadow(0 0 .25rem $black25);
+  letter-spacing: .5rem;
+  background: -webkit-linear-gradient(90deg, $less-light 0%, $white 30%, $white 70%, $less-light 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  span {
+    font-size: 6rem;
+    opacity: .9;
+    background: -webkit-linear-gradient(90deg, $less-light 0%, $white 30%, $white 70%, $less-light 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: $regular;
+  opacity: .5;
+  margin-bottom: -1rem
 }

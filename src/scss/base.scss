@@ -12,18 +12,29 @@ $default-text: 12px;
   margin: 0;
   font-family: Montserrat, serif;
   letter-spacing: 1px;
-  color: $gem;
+  color: $white;
 }
 
 html {
-  background: $starship;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(-10deg, $persian, $tory, $chill, $turquoise);
+  background-size: 200% 200%;
+  animation: gradient 6s ease infinite;
+  height: 100vh;
+
+  @media ($small-screen) {
+    background-size: 120% 120%;
+  }
 }
 
 .highlight {
   background: #a11e1e;
 }
 
-.joke {
+#signal, #subject {
   display: none;
   position: absolute;
   top: 4rem;
@@ -32,4 +43,32 @@ html {
   &.active {
     display: block;
   }
+}
+
+button {
+  background: #ffffff0a;
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  width: $button-width;
+  box-shadow: 0 .25rem 1rem -.25rem #ffffff0f;
+  transition: .1s;
+  text-transform: uppercase;
+  letter-spacing: .25rem;
+  font-weight: $semi-bold;
+  border: 1px solid #ffffff0f;
+  cursor: pointer;
+  height: 6rem;
+
+  &:hover {
+    background: #ffffff0f;
+  }
+
+  span {
+    text-transform: capitalize;
+    opacity: .7;
+  }
+}
+
+.joke {
+  margin-top: 2rem;
 }

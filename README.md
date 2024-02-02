@@ -1,27 +1,19 @@
-# AngularSignals
+<p align="center">
+	<a href="https://en.wikipedia.org/wiki/Coeus"><img src="https://github.com/jrsmth/koios/assets/34093915/b8e8daee-13e6-45e0-a413-c1bd6c90a6bb"></a>
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+<p align="center">
+  ![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)
+  ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+</p>
 
-## Development server
+<h1 align="center">Angular Signals 🔊</h1>
+<p align="center"><img src="./src/assets/tier2-logo.svg" width="40" alt="Tier 2 Logo"> Tier 2 Blog</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Overview
 
-## Code scaffolding
+Rollup is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library or application. It uses the standardized ES module format for code, instead of previous idiosyncratic solutions such as CommonJS and AMD. ES modules let you freely and seamlessly combine the most useful individual functions from your favorite libraries. Rollup can optimize ES modules for faster native loading in modern browsers, or output a legacy module format allowing ES module workflows today.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Quick Start Guide
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Install with `npm install --global rollup`. Rollup can be used either through a [command line interface](https://rollupjs.org/command-line-interface/) with an optional configuration file or else through its [JavaScript API](https://rollupjs.org/javascript-api/). Run `rollup --help` to see the available options and parameters. The starter project templates, [rollup-starter-lib](https://github.com/rollup/rollup-starter-lib) and [rollup-starter-app](https://github.com/rollup/rollup-starter-app), demonstrate common configuration options, and more detailed instructions are available throughout the [user guide](https://rollupjs.org/introduction/).

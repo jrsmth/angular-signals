@@ -1,7 +1,7 @@
+@import 'animation';
 @import 'colour';
 @import 'font';
-//@import 'spacing';
-@import 'animation';
+@import 'spacing';
 
 $drop-shadow: 0 .5rem 2rem -.5rem #000000BF;
 $small-screen: 1500px;
@@ -13,4 +13,62 @@ $default-text: 12px;
   font-family: Montserrat, serif;
   letter-spacing: 1px;
   color: $white;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(-10deg, $persian 0%, $tory 25%, $chill 50%, $turquoise 75%);
+  background-size: 200% 200%;
+  animation: gradient 20s ease infinite;
+  height: 100vh;
+
+  @media ($small-screen) {
+    background-size: 120% 120%;
+  }
+}
+
+.highlight {
+  background: #a11e1e;
+}
+
+#signal, #subject {
+  display: none;
+  position: absolute;
+  top: 4rem;
+  left: 0;
+
+  &.active {
+    display: block;
+  }
+}
+
+button {
+  background: #ffffff0a;
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  width: $button-width;
+  box-shadow: 0 .25rem 1rem -.25rem #ffffff0f;
+  transition: .1s;
+  text-transform: uppercase;
+  letter-spacing: .25rem;
+  font-weight: $semi-bold;
+  border: 1px solid #ffffff0f;
+  cursor: pointer;
+  height: 6rem;
+
+  &:hover {
+    background: #ffffff0f;
+  }
+
+  span {
+    text-transform: capitalize;
+    opacity: .7;
+  }
+}
+
+.joke {
+  margin-top: 2rem;
 }

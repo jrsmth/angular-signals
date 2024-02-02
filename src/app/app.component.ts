@@ -1,37 +1,26 @@
-import {ChangeDetectionStrategy, Component, OnInit, signal, WritableSignal} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { ReactiveFormsModule } from "@angular/forms";
-import { MatButton } from "@angular/material/button";
-import { HighlightDirective } from "./highlight.directive";
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterOutlet} from '@angular/router';
 import {SignalComponent} from "./signal/signal.component";
-import {OriginalComponent} from "./original/original.component";
+import {SubjectComponent} from "./subject/subject.component";
+import {HighlightDirective} from "./core/directive/highlight.directive";
+import {FaIconComponent} from "@fortawesome/angular-fontawesome";
+import {faGithub} from "@fortawesome/free-brands-svg-icons";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ReactiveFormsModule, MatButton, HighlightDirective, SignalComponent, OriginalComponent],
+  imports: [CommonModule, RouterOutlet, SignalComponent, SubjectComponent, HighlightDirective, FaIconComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'angular-signals';
-  tdee: number = 2200;
-  signalled: boolean = true; // false
+  protected readonly faGithub = faGithub;
+  private _renderCount = 0;
 
-  activateForm(formName: string): void {
-    this.signalled = (formName == 'with');
+  get renderCount() {
+    return ++this._renderCount;
   }
-
-}
-
-enum Unit {
-  IMPERIAL,
-  METRIC,
-}
-
-enum Gender {
-  FEMALE,
-  MALE
 }

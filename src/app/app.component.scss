@@ -10,31 +10,10 @@ header {
   }
 }
 
-#selection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10%;
-  margin: 0 10%;
-
-  #with-signals, #without-signals {
-    cursor: pointer;
-    opacity: .5;
-    margin: 1rem 0 2rem 0;
-
-    &.active {
-      opacity: 1;
-    }
-  }
-}
-
-#demo {
-  margin: 0 auto;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80%;
+#parent {
+  position: absolute;
+  top: 12rem;
+  left: calc(50% - 25rem);
+  height: 16rem;
+  width: 50rem;
 }

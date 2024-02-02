@@ -1,22 +1,10 @@
-<header highlight>
-  <span>Total Daily Energy Expenditure Calculator</span>
+<header>
+  <span>Joke Teller</span>
 </header>
 <main>
-  <div id="container">
-    <section id="selection">
-      <div id="without-signals" [class.active]="!signalled" (click)="activateForm('without')">
-        <h2>Without Signals</h2>
-      </div>
-      <div id="with-signals" [class.active]="signalled" (click)="activateForm('with')">
-        <h2>With Signals 🔊</h2>
-      </div>
-    </section>
-    <section id="demo">
-      @if (signalled) {
-        <signal/>
-      } @else {
-        <original/>
-      }
-    </section>
-  </div>
+  <section id="parent" highlight>
+    <p>Render Count: {{ renderCount }}</p>
+    <signal />
+    <subject />
+  </section>
 </main>

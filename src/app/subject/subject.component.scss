@@ -1,8 +1,8 @@
 @import "base";
 
-#next-signal {
+#next-subject {
   position: absolute;
-  left: calc(50% + 0.5 * $button-gap);
+  left: calc(50% - 0.5 * $button-gap - $button-width);
   top: 20rem;
 }
 

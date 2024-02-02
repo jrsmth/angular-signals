@@ -1,80 +1,67 @@
 import {
+  AfterViewInit,
+  ApplicationRef,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component, inject,
-  Input,
-  OnInit,
-  signal,
-  WritableSignal
+  Component,
+  ElementRef,
+  inject,
+  Injector,
+  NgZone, runInInjectionContext, signal,
+  ViewChild
 } from "@angular/core";
-import { HighlightDirective } from "../highlight.directive";
-import { CommonModule } from "@angular/common";
-import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
-import { CalorieService } from "../calorie.service";
-import { AppFormComponent } from "../app-form/app-form.component";
-import {MatButton} from "@angular/material/button";
-import {RxUnpatch} from "@rx-angular/template/unpatch";
+import {CommonModule} from "@angular/common";
+import {RouterOutlet} from "@angular/router";
+import {HighlightDirective} from "../core/directive/highlight.directive";
+import {fromEvent, interval, throttle} from "rxjs";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import {JokeService} from "../core/service/joke.service";
+import {FaIconComponent} from "@fortawesome/angular-fontawesome";
+import {faCaretRight} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'signal',
   standalone: true,
-  imports: [CommonModule, HighlightDirective, AppFormComponent, MatButton, ReactiveFormsModule, RxUnpatch],
+  imports: [CommonModule, RouterOutlet, HighlightDirective, FaIconComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './signal.component.html',
   styleUrl: './signal.component.scss'
 })
-export class SignalComponent implements OnInit {
+export class SignalComponent implements AfterViewInit {
 
-  // mysignal = signal(1);
-  //
-  // constructor() {
-  //   setTimeout(() => setInterval(() => this.changeSignalValue(), 2000), 1000);
-  // }
-  //
-  // changeSignalValue() {
-  //   this.mysignal.update((value) => value + 1);
-  // }
-  changeDetector = inject(ChangeDetectorRef);
+  @ViewChild('nextSignal') btn!: ElementRef<HTMLButtonElement>;
 
-  tdeeSignal: WritableSignal<number> = signal(2400);
+  ngZone = inject(NgZone);
+  injector = inject(Injector);
+  app = inject(ApplicationRef);
 
-  constructor(private service: CalorieService) {}
+  renderCount = signal(0);
+  jokeQuestion = signal("");
+  jokeAnswer = signal("");
 
-  protected unitHeight = 'cm';
-  protected unitWeight = 'kg';
-  protected form: FormGroup = new FormGroup({
-    unit: new FormControl(''),
-    gender: new FormControl(''),
-    age: new FormControl(''),
-    activity: new FormControl(''),
-    height: new FormControl(''),
-    weight: new FormControl(''),
-  });
+  constructor(private jokeService: JokeService) {}
 
-  ngOnInit(): void {
-    this.form.controls["unit"].valueChanges.subscribe(x => {
-      const selectedUnit = this.form.controls["unit"].value!;
-      this.unitHeight = selectedUnit == 'metric' ? 'cm' : 'inch';
-      this.unitWeight = selectedUnit == 'metric' ? 'kg' : 'lbs';
-    })
+  ngAfterViewInit(): void {
+    runInInjectionContext(this.injector, () => {
+      this.ngZone.runOutsideAngular(() => {
+        fromEvent(this.btn.nativeElement, 'click')
+          .pipe(throttle(() => interval(1000)), takeUntilDestroyed())
+          .subscribe(() => {
+            this.renderCount.update((value) => value + 1);
+
+            const joke = this.jokeService.getRandom();
+            this.jokeQuestion.update(() => joke.question);
+            this.jokeAnswer.update(() => joke.answer);
+
+            // trigger the CD
+            this.app.tick();
+          });
+      });
+    });
   }
 
-  updateTdee(): void {
-    const inputs = this.form.controls;
-    const tdee = this.service.calculateTdee(
-      inputs["unit"].value,
-      inputs["gender"].value,
-      parseInt(inputs["age"].value),
-      parseInt(inputs["height"].value),
-      parseInt(inputs["weight"].value),
-      inputs["activity"].value
-    );
-
-    // this.tdeeSignal.set(tdee); // in blog, explain .set() vs .update()
-    this.tdeeSignal.update(() => tdee); // bc OnPush...?
-
-    console.log(tdee);
-    this.changeDetector.detectChanges();
+  handleClick(): void {
+    // this.renderCount++;
   }
 
+  protected readonly faCaretRight = faCaretRight;
 }

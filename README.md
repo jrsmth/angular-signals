@@ -1,14 +1,21 @@
 <p align="center">
-	<a href="https://en.wikipedia.org/wiki/Coeus"><img src="https://github.com/jrsmth/koios/assets/34093915/b8e8daee-13e6-45e0-a413-c1bd6c90a6bb"></a>
+	<a href="jrsmth.github.io/angular-signalss"><img src="https://github.com/jrsmth/angular-signals/assets/34093915/9eb9ce2f-4f48-4803-bf02-3596e1090998"></a>
 </p>
 
 <p align="center">
-  ![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)
-  ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+  <a href="https://github.com/jrsmth">
+    <img src="https://img.shields.io/badge/GitHub-jrsmth-181717.svg?style=flat&logo=github">
+  </a>  
+  <a href="https://angular.dev/">
+    <img src="https://img.shields.io/badge/Angular%20-17%20-blue.svg?style=flat&logo=angular&logoColor=white">
+  </a>  
+  <a href="https://jrsm1th.medium.com/an-overview-of-angular-signals-ac1fac3e1719">
+    <img src="https://img.shields.io/badge/Medium%20-4_min%20-orange.svg?style=flat&logo=medium&logoColor=white">
+  </a>
 </p>
 
 <h1 align="center">Angular Signals 🔊</h1>
-<p align="center"><img src="./src/assets/tier2-logo.svg" width="40" alt="Tier 2 Logo"> Tier 2 Blog</p>
+<p align="center"><img src="./src/assets/t2-logo.svg" width="40" alt="Tier 2 Logo"> Tier 2 Blog</p>
 
 ## Overview
 

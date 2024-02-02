@@ -14,7 +14,7 @@
   </a>
 </p>
 
-<p align="center">Angular Signals 🔊</p>
+<h3 align="center">Angular Signals 🔊</h3>
 
 ## Overview
 

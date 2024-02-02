@@ -1,6 +1,3 @@
-<p align="center"><img src="./src/assets/t2-logo.svg" width="160" alt="Tier 2 Logo"></p>
-
-
 <p align="center">
 	<a href="jrsmth.github.io/angular-signalss"><img src="https://github.com/jrsmth/angular-signals/assets/34093915/9eb9ce2f-4f48-4803-bf02-3596e1090998"></a>
 </p>
@@ -18,6 +15,7 @@
 </p>
 
 <h1 align="center">Angular Signals 🔊</h1>
+<p align="center"><img src="./src/assets/t2-logo.svg" width="40" alt="Tier 2 Logo"> Blog</p>
 
 ## Overview
 

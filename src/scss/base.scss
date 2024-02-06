@@ -1,12 +1,14 @@
 @import 'animation';
 @import 'colour';
-@import 'font';
+//@import 'font';
 @import 'spacing';
 
 $drop-shadow: 0 .5rem 2rem -.5rem #000000BF;
 $small-screen: 1500px;
 $ease-in: .15s ease-in-out;
 $default-text: 12px;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
 
 * {
   margin: 0;
@@ -55,7 +57,7 @@ button {
   transition: .1s;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: $medium;
+  font-weight: 500;
   border: 1px solid #ffffff40;
   cursor: pointer;
 

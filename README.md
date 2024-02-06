@@ -24,3 +24,25 @@ Rollup is a module bundler for JavaScript which compiles small pieces of code in
 ## Quick Start Guide
 
 Install with `npm install --global rollup`. Rollup can be used either through a [command line interface](https://rollupjs.org/command-line-interface/) with an optional configuration file or else through its [JavaScript API](https://rollupjs.org/javascript-api/). Run `rollup --help` to see the available options and parameters. The starter project templates, [rollup-starter-lib](https://github.com/rollup/rollup-starter-lib) and [rollup-starter-app](https://github.com/rollup/rollup-starter-app), demonstrate common configuration options, and more detailed instructions are available throughout the [user guide](https://rollupjs.org/introduction/).
+
+
+
+
+
+
+[![Build and Deploy](https://github.com/jrsmth/delaunay/actions/workflows/main.yaml/badge.svg)](https://github.com/jrsmth/delaunay/actions/workflows/main.yaml)
+
+# Delaunay
+Delaunay Triangulation [Demo](https://jrsmth.github.io/delaunay/)
+
+[@jrsmiffy/delaunator](https://github.com/jrsmth/delaunator)
+
+<img width="1440" alt="Delaunay Demo Example" src="https://user-images.githubusercontent.com/34093915/221356676-ccfd0c15-4504-47e2-bd9b-d9bda5d175c6.png">
+
+## Explanation
+- 🧮  For a set of points `P`: `DT(P)` is such that no point in `P` lies inside the circumcircle of any triangle
+- ℹ️  [More info](https://en.wikipedia.org/wiki/Delaunay_triangulation)
+
+## Notes
+- 📦  `npm run build --prefix ./app`
+- 🚀  `main branch is served by GitHub Pages`

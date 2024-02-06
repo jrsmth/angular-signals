@@ -1,5 +1,6 @@
 import {Directive, DoCheck, ElementRef, Inject, inject, Input} from "@angular/core";
 import {DOCUMENT} from "@angular/common";
+import confetti from "canvas-confetti";
 
 @Directive({
   selector: '[highlight]',
@@ -14,10 +15,16 @@ export class HighlightDirective implements DoCheck {
   ngDoCheck() {
     console.log(`[doCheck] ...`)
     this.addHighlight();
-    setTimeout(() => this.removeHighlight(), 500);
+    setTimeout(() => this.removeHighlight(), 1000);
   }
 
   private addHighlight() {
+    confetti({
+      particleCount: 200 * Math.random(),
+      spread: 500 * Math.random(),
+      origin: { x: Math.random(), y: Math.random() },
+    });
+
     const actives = document.querySelectorAll('.active');
     actives.forEach((active) => {
       active.classList.remove('active');

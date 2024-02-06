@@ -25,7 +25,9 @@ export class SubjectComponent {
     return ++this._renderCount;
   }
 
-  constructor(private jokeService: JokeService) {}
+  constructor(private jokeService: JokeService) {
+    this.handleClick();
+  }
 
   handleClick(): void {
     const joke = this.jokeService.getRandom();

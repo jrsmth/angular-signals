@@ -31,7 +31,7 @@ body {
 }
 
 .highlight {
-  background: #a11e1e;
+  background: linear-gradient(0deg, #50FA7B40 0%, #50FA7B40 100%) !important;
 }
 
 #signal, #subject {
@@ -40,7 +40,8 @@ body {
   border: 1px solid #ffffff1f;
   padding: 2rem;
   width: calc(100% - 4rem - 4rem);
-  height: calc(90% - 15.5rem);
+  height: calc(90% - 13.5rem);
+  background: linear-gradient(0deg, #ffffff00 0%, #ffffff0f 100%);
 
   &.active {
     display: block;
@@ -49,37 +50,49 @@ body {
 
 button {
   background: linear-gradient(0deg, #ffffff00 0%, #ffffff0f 100%);
-  padding: .75rem 1rem;
+  padding: 1rem;
   width: $button-width;
   transition: .1s;
   text-transform: uppercase;
-  letter-spacing: .25rem;
-  font-weight: $semi-bold;
+  letter-spacing: 2px;
+  font-weight: $medium;
   border: 1px solid #ffffff40;
   cursor: pointer;
-  height: 5rem;
 
   &:hover {
-    background: linear-gradient(0deg, #ffffff00 0%, #ffffff40 100%);
+    background: linear-gradient(0deg, #ffffff00 0%, rgba(255, 255, 255, 0.12) 100%);
   }
 
   span {
     text-transform: capitalize;
     opacity: .7;
+    margin-top: .25rem;
+    font-size: 11px;
   }
 }
 
 .joke {
-  margin-top: 2rem;
+  position: absolute;
+  top: calc(50% - 2.5rem);
+  left: calc(50% - 30rem);
+  width: 60rem;
+  height: 16rem;
 
   h1 {
     font-size: 3rem;
     opacity: 1;
     font-weight: 600;
     text-align: center;
+    width: 100%;
   }
 
   p {
     text-align: center;
+    width: 100%;
+    font-size: 1rem;
+
+    &:first-child {
+      font-size: 1.25rem;
+    }
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Joke } from "../model/joke";
-import jokes from "../assets/jokes.json";
+import jokes from "/assets/jokes.json";
 import { random } from "lodash";
 
 

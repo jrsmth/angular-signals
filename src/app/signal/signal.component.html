@@ -1,0 +1,15 @@
+<section id="signal" highlight>
+  <h1>Signal</h1>
+  <p>Render Count: {{ renderCount() }}</p>
+  <div class="joke">
+    <p>{{ jokeQuestion() }}</p>
+    <p>{{ jokeAnswer() }}</p>
+  </div>
+</section>
+<button #nextSignal id="next-signal">
+  Next <fa-icon [icon]="faCaretRight"></fa-icon>
+  <br>
+  <span>With Signals 🔉</span>
+</button>
+
+<i class="fa-solid fa-volume-high"></i>

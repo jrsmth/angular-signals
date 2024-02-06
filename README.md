@@ -1,5 +1,5 @@
 <p align="center">
-	<a href="jrsmth.github.io/angular-signalss"><img src="https://github.com/jrsmth/angular-signals/assets/34093915/9eb9ce2f-4f48-4803-bf02-3596e1090998"></a>
+	<a href="jrsmth.github.io/angular-signalss"><img width="200" src="https://github.com/jrsmth/angular-signals/assets/122913580/f778a816-51d8-442d-a9df-b02fd1998481"></a>
 </p>
 
 <p align="center">
@@ -15,7 +15,7 @@
 </p>
 
 <h1 align="center">Angular Signals 🔊</h1>
-<p align="center">📘📘 Tier 2 Blog 📘📘</p>
+<p align="center"><a href="https://jrsmth.github.io/angular-signals">jrsmth.github.io/angular-signals</a></p>
 
 ## Overview
 

@@ -20,7 +20,7 @@ jobs:
       - name: Bump and Tag 🏷️
         run: |
           npm version patch
-          git tag "$(cat package.json | jq -r '.version')" -m "[release] delaunay-$(cat package.json | jq -r '.version')"
+          git tag "$(cat package.json | jq -r '.version')" -m "[release] angular-signals-$(cat package.json | jq -r '.version')"
           git push origin "$(cat package.json | jq -r '.version')"
           echo "VERSION=$(cat package.json | jq -r '.version')" >> $GITHUB_ENV
       - name: Release 📦
@@ -29,7 +29,7 @@ jobs:
           tag_name: ${{ env.VERSION }}
       - name: Add -SNAPSHOT 📷
         run: |
-          npm version patch --no-git-tag-version false
+          npm version patch --git-tag-version false
           npm version $(cat package.json | jq -r '.version')-SNAPSHOT
       - name: Commit -SNAPSHOT 💾
         uses: stefanzweifel/git-auto-commit-action@v4

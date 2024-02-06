@@ -5,13 +5,17 @@ on:
 permissions:
   contents: write
 jobs:
-  build-tag-deploy:
-    concurrency: ci-${{ github.ref }}
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+
+      - name: Install and build
+        run: npm i && npm run gh-build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
-          folder: .
+          branch: gh-pages
+          folder: ./dist/angular-signals

@@ -11,36 +11,28 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-
       - name: Install and Build 🔧
         run: |
           npm ci
           npm run build
-
       - name: Set-up User 🐵
         uses: fregante/setup-git-user@v2
-
       - name: Bump and Tag 🏷️
         run: |
           npm version patch
           git tag "$(cat package.json | jq -r '.version')" -m "[release] delaunay-$(cat package.json | jq -r '.version')"
           git push origin "$(cat package.json | jq -r '.version')"
           echo "VERSION=$(cat package.json | jq -r '.version')" >> $GITHUB_ENV
-        # Note :: an env var cannot be accessed from a step that defines or updates it
-
       - name: Release 📦
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.VERSION }}
-
       - name: Add -SNAPSHOT 📷
         run: |
-          npm version patch --git-tag-version false
+          npm version patch --no-git-tag-version false
           npm version $(cat package.json | jq -r '.version')-SNAPSHOT
-
       - name: Commit -SNAPSHOT 💾
         uses: stefanzweifel/git-auto-commit-action@v4
-
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:

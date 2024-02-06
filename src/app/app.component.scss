@@ -16,6 +16,20 @@ header {
   left: 2rem;
   height: calc(90% - 10rem);
   width: calc(100% - 8rem);
-  border: 1px solid white;
+  border: 1px solid #ffffff1f;
   padding: 2rem;
+
+  h1 {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: $medium;
+    letter-spacing: 2px;
+    opacity: .9;
+  }
+
+  p {
+    margin: .25rem 0 2rem .25rem;
+    font-size: 12px;
+    opacity: .7;
+  }
 }

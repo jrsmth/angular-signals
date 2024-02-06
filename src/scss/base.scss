@@ -37,9 +37,10 @@ body {
 #signal, #subject {
   display: none;
   position: absolute;
-  border: 1px solid white;
+  border: 1px solid #ffffff1f;
   padding: 2rem;
   width: calc(100% - 4rem - 4rem);
+  height: calc(90% - 15.5rem);
 
   &.active {
     display: block;
@@ -56,7 +57,7 @@ button {
   font-weight: $semi-bold;
   border: 1px solid #ffffff40;
   cursor: pointer;
-  height: 6rem;
+  height: 5rem;
 
   &:hover {
     background: linear-gradient(0deg, #ffffff00 0%, #ffffff40 100%);
@@ -70,4 +71,15 @@ button {
 
 .joke {
   margin-top: 2rem;
+
+  h1 {
+    font-size: 3rem;
+    opacity: 1;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
 }

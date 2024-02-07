@@ -1,40 +1,14 @@
 @import "base";
 
 #next-original {
-  position: absolute;
   left: calc(50% - 0.5 * $button-gap - $button-width);
-  bottom: 2rem;
+  @include next-button
 }
 
 h1 {
-  span {
-    font-size: 6rem;
-    opacity: .9;
-    background: -webkit-linear-gradient(90deg, $less-light 0%, $white 30%, $white 70%, $less-light 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-h2 {
-  font-size: 1rem;
-  font-weight: 400;
-  opacity: .5;
-  margin-bottom: -1rem
-}
-
-
-
-h1 {
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: 2px;
-  opacity: .9;
+  @include head-title
 }
 
 p {
-  margin: .25rem 0 2rem .25rem;
-  font-size: 12px;
-  opacity: .7;
+  @include head-content
 }

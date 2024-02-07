@@ -1,16 +1,6 @@
-@import "@fontsource/montserrat";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
 
-@import "@fontsource/montserrat/300.css";
-$light: 300;
-
-@import "@fontsource/montserrat/400.css";
-$regular: 400;
-
-@import "@fontsource/montserrat/500.css";
-$medium: 500;
-
-@import "@fontsource/montserrat/600.css";
-$semi-bold: 600;
-
-@import "@fontsource/montserrat/700.css";
-$bold: 700;
+$largest-text: 1.5rem;
+$large-text: 1rem;
+$default-text: .75rem;
+$small-text: 11px;

@@ -21,16 +21,10 @@ header {
   background: linear-gradient(0deg, #ffffff00 0%, #ffffff0f 100%);
 
   h1 {
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 2px;
-    opacity: .9;
+    @include head-title
   }
 
   p {
-    margin: .25rem 0 2rem .25rem;
-    font-size: 12px;
-    opacity: .7;
+    @include head-content
   }
 }

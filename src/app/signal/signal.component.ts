@@ -1,22 +1,12 @@
-import {
-  AfterViewInit,
-  ApplicationRef,
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  inject,
-  Injector,
-  NgZone, runInInjectionContext, signal,
-  ViewChild
-} from "@angular/core";
-import {CommonModule} from "@angular/common";
-import {RouterOutlet} from "@angular/router";
-import {HighlightDirective} from "../core/directive/highlight.directive";
-import {fromEvent, interval, throttle} from "rxjs";
-import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
-import {JokeService} from "../core/service/joke.service";
-import {FaIconComponent} from "@fortawesome/angular-fontawesome";
-import {faCaretRight} from "@fortawesome/free-solid-svg-icons";
+import { AfterViewInit, ApplicationRef, ChangeDetectionStrategy, Component, ElementRef, inject, Injector, NgZone, runInInjectionContext, signal, ViewChild } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterOutlet } from "@angular/router";
+import { HighlightDirective } from "../core/directive/highlight.directive";
+import { fromEvent, interval, throttle } from "rxjs";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { JokeService } from "../core/service/joke.service";
+import { FaIconComponent } from "@fortawesome/angular-fontawesome";
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'signal',
@@ -30,17 +20,19 @@ export class SignalComponent implements AfterViewInit {
 
   @ViewChild('nextSignal') btn!: ElementRef<HTMLButtonElement>;
 
-  ngZone = inject(NgZone);
-  injector = inject(Injector);
-  app = inject(ApplicationRef);
+  private ngZone = inject(NgZone);
+  private injector = inject(Injector);
+  private app = inject(ApplicationRef);
 
-  renderCount = signal(0);
-  jokeQuestion = signal("");
-  jokeAnswer = signal("");
+  protected readonly faCaretRight = faCaretRight;
+  protected renderCount = signal(0);
+  protected jokeQuestion = signal("");
+  protected jokeAnswer = signal("");
 
   constructor(private jokeService: JokeService) {}
 
   ngAfterViewInit(): void {
+    // Note :: button click event is captured & handled outside of Angular CD* to highlight signal value change
     runInInjectionContext(this.injector, () => {
       this.ngZone.runOutsideAngular(() => {
         fromEvent(this.btn.nativeElement, 'click')
@@ -52,16 +44,11 @@ export class SignalComponent implements AfterViewInit {
             this.jokeQuestion.update(() => joke.question);
             this.jokeAnswer.update(() => joke.answer);
 
-            // trigger the CD
+            // trigger Angular Change Detection (CD*)
             this.app.tick();
           });
       });
     });
   }
 
-  handleClick(): void {
-    // this.renderCount++;
-  }
-
-  protected readonly faCaretRight = faCaretRight;
 }

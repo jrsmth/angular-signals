@@ -5,7 +5,6 @@ import { SignalComponent } from "./signal/signal.component";
 import { OriginalComponent } from "./original/original.component";
 import { HighlightDirective } from "./core/directive/highlight.directive";
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 @Component({
   selector: 'app-root',
@@ -16,8 +15,6 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-signals';
-  protected readonly faGithub = faGithub;
   private _renderCount = 0;
 
   get renderCount() {

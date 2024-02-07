@@ -26,10 +26,10 @@ export class OriginalComponent {
   }
 
   constructor(private jokeService: JokeService) {
-    this.handleClick();
+    this.nextJoke();
   }
 
-  handleClick(): void {
+  nextJoke(): void {
     const joke = this.jokeService.getRandom();
     this.jokeQuestion = joke.question;
     this.jokeAnswer = joke.answer;

@@ -1,5 +1,5 @@
-import {Directive, DoCheck, ElementRef, Inject, inject, Input} from "@angular/core";
-import {DOCUMENT} from "@angular/common";
+import { Directive, DoCheck, ElementRef, Inject, inject, Input } from "@angular/core";
+import { DOCUMENT } from "@angular/common";
 import confetti from "canvas-confetti";
 
 @Directive({
@@ -7,13 +7,12 @@ import confetti from "canvas-confetti";
   standalone: true,
 })
 export class HighlightDirective implements DoCheck {
-  @Input() highlight?: string = '';
-  className = 'highlight';
-  el = inject(ElementRef);
+  private el = inject(ElementRef);
+  private className = 'highlight';
   @Inject(DOCUMENT) private document!: Document
 
   ngDoCheck() {
-    console.log(`[doCheck] ...`)
+    console.debug(`[doCheck] ...`)
     this.addHighlight();
     setTimeout(() => this.removeHighlight(), 1000);
   }
@@ -31,14 +30,14 @@ export class HighlightDirective implements DoCheck {
     });
 
     const element = this.el.nativeElement as HTMLElement;
-    console.log(`[adding highlight] element [${element.nodeName}]`);
+    console.debug(`[adding highlight] element [${element.nodeName}]`);
     element.classList.add(this.className);
     element.classList.add('active');
   }
 
   private removeHighlight() {
     const element = this.el.nativeElement as HTMLElement;
-    console.log(`[removing highlight] element [${element.nodeName}]`);
+    console.debug(`[removing highlight] element [${element.nodeName}]`);
     element.classList.remove(this.className);
   }
 }

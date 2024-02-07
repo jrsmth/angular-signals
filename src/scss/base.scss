@@ -36,7 +36,7 @@ body {
   background: linear-gradient(0deg, #50FA7B40 0%, #50FA7B40 100%) !important;
 }
 
-#signal, #subject {
+#signal, #original {
   display: none;
   position: absolute;
   border: 1px solid #ffffff1f;
@@ -62,7 +62,7 @@ button {
   cursor: pointer;
 
   &:hover {
-    background: linear-gradient(0deg, #ffffff00 0%, rgba(255, 255, 255, 0.12) 100%);
+    background: linear-gradient(0deg, #ffffff00 0%, rgba(255, 255, 255, 0.08) 100%);
   }
 
   span {

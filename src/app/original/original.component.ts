@@ -1,20 +1,20 @@
-import {ChangeDetectionStrategy, Component, signal} from "@angular/core";
-import {CommonModule} from "@angular/common";
-import {RouterOutlet} from "@angular/router";
-import {HighlightDirective} from "../core/directive/highlight.directive";
-import {JokeService} from "../core/service/joke.service";
-import {faCaretRight} from "@fortawesome/free-solid-svg-icons";
-import {FaIconComponent} from "@fortawesome/angular-fontawesome";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterOutlet } from "@angular/router";
+import { HighlightDirective } from "../core/directive/highlight.directive";
+import { JokeService } from "../core/service/joke.service";
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 
 @Component({
-  selector: 'subject',
+  selector: 'original',
   standalone: true,
   imports: [CommonModule, RouterOutlet, HighlightDirective, FaIconComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './subject.component.html',
-  styleUrl: './subject.component.scss'
+  templateUrl: './original.component.html',
+  styleUrl: './original.component.scss'
 })
-export class SubjectComponent {
+export class OriginalComponent {
   title = 'angular-signals';
   jokeQuestion: string = "";
   jokeAnswer: string = "";

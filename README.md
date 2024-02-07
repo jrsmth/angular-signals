@@ -1,5 +1,5 @@
 [![jrsmth](https://img.shields.io/badge/GitHub-jrsmth-181717.svg?style=flat&logo=github)](https://github.com/jrsmth/)
-[![deploy](https://github.com/jrsmth/delaunay/actions/workflows/main.yaml/badge.svg)](https://github.com/jrsmth/delaunay/actions/workflows/main.yaml)
+[![deploy](https://github.com/jrsmth/angular-signals/actions/workflows/main.yaml/badge.svg)](https://github.com/jrsmth/angular-signals/actions/workflows/main.yaml)
 [![angular](https://img.shields.io/badge/Angular%20-17%20-blue.svg?style=flat&logo=angular&logoColor=white)](https://angular.dev/)
 [![medium](https://img.shields.io/badge/Medium%20-4_min%20-orange.svg?style=flat&logo=medium&logoColor=white)](https://jrsm1th.medium.com/an-overview-of-angular-signals-ac1fac3e1719)
 

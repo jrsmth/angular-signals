@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "gh-build": "ng build --base-href /",
+    "gh-build": "ng build --base-href /angular-signals",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:angular-signals": "node dist/angular-signals/server/server.mjs"
